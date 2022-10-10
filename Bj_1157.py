@@ -1,3 +1,5 @@
-alphabets = input()
+alphabets = input().upper()
 
-each_alpha = alphabets.upper
+each_alpha = list(set(alphabets))
+
+
