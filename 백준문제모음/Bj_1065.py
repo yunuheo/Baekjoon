@@ -11,3 +11,13 @@
 
 N = int(input())
 arr = list(map(int, range(1,N+1)))
+
+hansoo_cnt = 0
+for i in range(N-1):
+    if arr[i] < arr[i+1]:
+        if (arr[i+1] - arr[i]) == (arr[i+2] - arr[i+1]):
+            hansoo_cnt += 1
+    else:
+        if (arr[i]-arr[i+1]) == (arr[i+1]-arr[i+2]):
+            hansoo_cnt += 1
+print(hansoo_cnt)
