@@ -10,14 +10,40 @@
 '''
 
 N = int(input())
-arr = list(map(int, range(1,N+1)))
 
-hansoo_cnt = 0
-for i in range(N-1):
-    if arr[i] < arr[i+1]:
-        if (arr[i+1] - arr[i]) == (arr[i+2] - arr[i+1]):
-            hansoo_cnt += 1
-    else:
-        if (arr[i]-arr[i+1]) == (arr[i+1]-arr[i+2]):
-            hansoo_cnt += 1
-print(hansoo_cnt)
+if N == 1000:  #1000은 예외로 처리
+    N = 999
+
+
+if N < 100:
+    hansoo_cnt = N
+else:
+    hansoo_cnt = 99
+    num = 100
+    while True:
+        if num == N+1:
+            break
+        a=list(map(int, str(num)))
+        if len(a) == 3:
+            if a[0] == a[1] and a[1] == a[2]:
+                hansoo_cnt += 1
+                num += 1
+            elif a[0] > a[1]:
+                if a[0]-a[1] == a[1]-a[2]:
+                    hansoo_cnt += 1
+                    num += 1
+                else:
+                    num += 1
+            else: 
+                if a[1]-a[0] == a[2]-a[1]:
+                    hansoo_cnt += 1
+                    num += 1
+                else:
+                    num += 1
+
+print(hansoo_cnt)      
+
+
+
+        
+
