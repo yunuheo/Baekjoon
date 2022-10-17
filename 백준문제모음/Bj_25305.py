@@ -3,4 +3,10 @@
 N , k = map(int,input().split(' '))
 x = list(map(int,input().split(' ')))
 
+for i in range(k-1):
+    x.remove(max(x))
+
+print(max(x))
+
+
 
