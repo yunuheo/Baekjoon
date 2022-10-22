@@ -38,18 +38,17 @@ def merge(A,p,q,r):
     i = p
     t = 0
     
-      
-    
-    
     while i<=r:
         A[i] =tmp[t]
         cnt += 1  #정렬된 수가 배열A에 저장될때마다 1씩 증가
         if cnt == k:
             result = A[i]
             break
+        
         i += 1
         t += 1
-    
+    if cnt < k:
+        result = -1
 
 cnt = 0  #cnt는 전역변수임 바로 아래 merge_sort 함수 내에서 사용될 예정(=>global 키워드 사용)
 result = 0
