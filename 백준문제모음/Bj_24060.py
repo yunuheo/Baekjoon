@@ -1,9 +1,6 @@
 #병합정렬을 이용하여 정렬된 배열tmp[]에 k번째로 저장된 숫자 찾기.
 
 #병합정렬 구현
-from re import T
-
-
 def merge_sort(A,p,r):
     if p<r:
         q = p+r//2
