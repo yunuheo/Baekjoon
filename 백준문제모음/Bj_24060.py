@@ -3,15 +3,17 @@
 #병합정렬 구현
 def merge_sort(A,p,r):
     if p<r:
-        q = p+r//2
+        q = (p+r)//2
         merge_sort(A,p,q)
         merge_sort(A,q+1,r)
         merge(A,p,q,r)
-
+        return A
+        
 def merge(A,p,q,r):
     i = p
     j = q+1
     tmp = []
+    
     while i<=q and j <= r:
         if A[i] <= A[j]:
             tmp.append(A[i])
@@ -25,11 +27,17 @@ def merge(A,p,q,r):
     while j<=r:
         tmp.append(A[j])
         j += 1
+    
     i = p
     t = 0
     while i<=r:
         A[i] =tmp[t]
         i += 1
         t += 1
+
+arr1 = [6,13,1,49]
+
+print(merge_sort(arr1,0,3))
+
 
 
