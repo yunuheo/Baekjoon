@@ -1,1 +1,1 @@
-N,k = map()
+N,k = map(int,input().split(' '))
